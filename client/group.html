@@ -1,0 +1,33 @@
+<template name="groupPage">
+    <div class="row">
+        <div class="col-xs-12">
+            <div>
+                Group: {{groupName}}
+            </div>
+            <div>
+                Group Members:
+                <ul>
+                    {{#each members}}
+                    <li>
+                        {{firstName}} {{lastName}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{#if isOwner}}
+            <form>
+                <input name="groupName" />
+                <button type="submit">Save changes</button>
+            </form>
+            <button name="deleteGroup">Delete Group</button>
+            {{/if}}
+            {{#if canJoin}}
+            <button name="joinGroup">Join Group</button>
+            {{/if}}
+            {{#if canLeave}}
+            <button name="leaveGroup">Leave Group</button>
+            {{/if}}
+
+        </div>
+    </div>
+</template>

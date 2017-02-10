@@ -1,0 +1,20 @@
+<template name="groupsList">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2>Groups</h2>
+            <ul>
+                {{#each groups}}
+                <li>
+                    <a href="group/{{_id}}">{{groupName}}</a>
+                </li>
+                {{/each}}
+            </ul>
+            {{#if currentUser}}
+            <form>
+                <input name="groupName" />
+                <button type="submit">Add group</button>
+            </form>
+            {{/if}}
+        </div>
+    </div>
+</template>
