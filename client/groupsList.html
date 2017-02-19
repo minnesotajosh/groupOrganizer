@@ -10,10 +10,15 @@
                 {{/each}}
             </ul>
             {{#if currentUser}}
-            <form>
-                <input name="groupName" />
-                <button type="submit">Add group</button>
-            </form>
+                {{#autoForm collection="Groups" id="insertGroupForm" type="insert"}}
+                  <fieldset>
+                    <legend>Add a Group</legend>
+                    {{> afQuickField name='groupName'}}
+                    {{> afQuickField name='location.address'}}
+                    {{> afQuickField name='description' rows=6}}
+                  </fieldset>
+                  <button type="submit" class="btn btn-primary">Insert</button>
+                {{/autoForm}}
             {{/if}}
         </div>
     </div>

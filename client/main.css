@@ -1,2 +1,2 @@
 /* CSS declarations go here */
-nav + .container {padding-top: 60px;}
+nav + .container {padding-top: 60px; padding-bottom: 60px;}

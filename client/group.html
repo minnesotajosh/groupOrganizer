@@ -2,24 +2,41 @@
     <div class="row">
         <div class="col-xs-12">
             <div>
-                Group: {{groupName}}
+                <p>Group: {{groupName}}</p>
+                <p>Location: {{location.address}}</p>
+                <p>Description: {{description}}</p>
             </div>
             <div>
-                Group Members:
+                Group Leaders:
                 <ul>
-                    {{#each members}}
+                    {{#each leaders}}
                     <li>
                         {{firstName}} {{lastName}}
                     </li>
                     {{/each}}
                 </ul>
             </div>
-            {{#if isOwner}}
-            <form>
-                <input name="groupName" />
-                <button type="submit">Save changes</button>
-            </form>
-            <button name="deleteGroup">Delete Group</button>
+            <div>
+                Group Members:
+                <ul>
+                    {{#each nonLeaderMembers}}
+                    <li>
+                        {{firstName}} {{lastName}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{#if isLeader}}
+                {{#autoForm collection="Groups" doc=this id="updateGroupForm" type="update"}}
+                  <fieldset>
+                    <legend>Edit Group</legend>
+                    {{> afQuickField name='groupName'}}
+                    {{> afQuickField name='location.address'}}
+                    {{> afQuickField name='description' rows=6}}
+                  </fieldset>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                {{/autoForm}}
+                <button name="deleteGroup">Delete Group</button>
             {{/if}}
             {{#if canJoin}}
             <button name="joinGroup">Join Group</button>
