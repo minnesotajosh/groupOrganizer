@@ -3,6 +3,7 @@ Router.configure({
 });
 
 Router.route('/', {name: 'groupsList'});
+Router.route('/insert', {name: 'insertGroup'});
 Router.route('/group/:_id', {
     name: 'groupPage',
     data: function() {

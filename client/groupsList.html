@@ -1,6 +1,6 @@
 <template name="groupsList">
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-md-3">
             <h2>Groups</h2>
             <ul>
                 {{#each groups}}
@@ -10,16 +10,13 @@
                 {{/each}}
             </ul>
             {{#if currentUser}}
-                {{#autoForm collection="Groups" id="insertGroupForm" type="insert"}}
-                  <fieldset>
-                    <legend>Add a Group</legend>
-                    {{> afQuickField name='groupName'}}
-                    {{> afQuickField name='location.address'}}
-                    {{> afQuickField name='description' rows=6}}
-                  </fieldset>
-                  <button type="submit" class="btn btn-primary">Insert</button>
-                {{/autoForm}}
+                <a href="{{pathFor route='insertGroup'}}">Insert Group</a>
             {{/if}}
+        </div>
+        <div class="col-xs-12 col-md-9">            
+            <div class="map-container">
+                {{> googleMap name="exampleMap" options=exampleMapOptions}}
+            </div>
         </div>
     </div>
 </template>
