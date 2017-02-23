@@ -1,9 +1,13 @@
 <template name="notifications">
     <div class="dropdown notifications-button">
-      <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-comments"></i>
+      <button id="checkNotifications" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{#if newNotifications.count}}
+            <span class="badge badge-pill badge-danger">{{newNotifications.count}}</span>
+          {{else}}
+              <i class="fa fa-comments"></i>
+          {{/if}}
       </button>
-      <ul class="dropdown-menu" aria-labelledby="dLabel">
+      <ul class="dropdown-menu" aria-labelledby="checkNotifications">
         {{#each notifications}}
             <li>{{{message}}}</li>
         {{/each}}

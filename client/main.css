@@ -21,3 +21,7 @@ nav + .container {padding-top: 60px; padding-bottom: 60px;}
 .notifications-button {
     padding: 10px 0;
 }
+
+.badge-danger {
+background-color: #d9534f;
+}

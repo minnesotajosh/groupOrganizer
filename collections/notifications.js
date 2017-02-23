@@ -18,5 +18,9 @@ Notifications.attachSchema(new SimpleSchema({
     },
     message: {
         type: String
+    },
+    isNew: {
+        type: Boolean,
+        defaultValue: true
     }
 }));
