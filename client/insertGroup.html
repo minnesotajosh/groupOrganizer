@@ -1,0 +1,14 @@
+<template name="insertGroup">
+    {{#if currentUser}}
+        {{#autoForm collection="Groups" id="insertGroupForm" type="insert"}}
+          <fieldset>
+            <legend>Add a Group</legend>
+            {{> afQuickField name='groupName' placeholder='The name of your group'}}
+            {{> afQuickField name='location.address' placeholder='Where do you meet?'}}
+            {{> afQuickField name='description' placeholder='Describe your group' rows=6}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Create group</button>
+          <button type="reset" class="btn btn-default">Cancel</button>
+        {{/autoForm}}
+    {{/if}}
+</template>
