@@ -1,4 +1,5 @@
 Meteor.subscribe('groups');
+Meteor.subscribe('notifications');
 
 Template.groupsList.helpers({
     'groups': function() {

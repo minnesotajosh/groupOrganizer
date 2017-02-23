@@ -1,0 +1,12 @@
+<template name="notifications">
+    <div class="dropdown notifications-button">
+      <button id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-comments"></i>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dLabel">
+        {{#each notifications}}
+            <li>{{{message}}}</li>
+        {{/each}}
+      </ul>
+    </div>
+</template>

@@ -2,7 +2,22 @@
 nav + .container {padding-top: 60px; padding-bottom: 60px;}
 
 .map-container {
-  width: 800px;
-  max-width: 100%;
-  height: 500px;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    right: 0;
+    bottom: 50px;
+}
+
+.groups-filter {
+    z-index: 1;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    bottom: 50px;
+    margin: 0;
+}
+
+.notifications-button {
+    padding: 10px 0;
 }

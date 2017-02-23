@@ -38,6 +38,14 @@ Template.groupPage.events({
             lastName: Meteor.user().profile.lastName
         });
         Groups.update({ _id: this._id }, { $set: { members: this.members }});
+
+        var leaderIds = this.leaders.map(leader => {
+            return { _id: leader._id };
+        });
+        Notifications.insert({
+            assignedTo: leaderIds,
+            message: `<a href='/group/${this._id}'>Someone joined your group!</a>`
+        });
     }
 });
 
