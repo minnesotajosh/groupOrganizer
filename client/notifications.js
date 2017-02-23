@@ -1,9 +1,11 @@
 Template.notifications.events({
-    'click #checkNotifications': function(event) {
-        var notifications = Notifications.find({}).map(notification => {
-            console.log(notification);
-            Notifications.update({ _id: notification._id }, { $set: { isNew: false } });
-        });
+    'blur #checkNotifications, click #checkNotifications': function(event) {
+        console.log($(event.target));
+        if ($(event.target).closest('.dropdown').hasClass('open')) {
+            var notifications = Notifications.find({}).map(notification => {
+                Notifications.update({ _id: notification._id }, { $set: { isNew: false } });
+            });
+        }
     }
 });
 

@@ -8,8 +8,10 @@
           {{/if}}
       </button>
       <ul class="dropdown-menu" aria-labelledby="checkNotifications">
-        {{#each notifications}}
+        {{#each newNotifications}}
             <li>{{{message}}}</li>
+        {{else}}
+            <li><a href="/notifications">Nothing New! View old notifications here.</a></li>
         {{/each}}
       </ul>
     </div>
